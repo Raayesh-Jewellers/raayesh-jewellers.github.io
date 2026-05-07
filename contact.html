@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Raayesh Jewellers</title>
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --black: #0a0a0a;
+            --white: #ffffff;
+            --gray: #a0a0a0;
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--black);
+            color: var(--white);
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            text-align: center;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            border-bottom: 1px solid #222;
+            background: var(--black);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--gold);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            margin-left: 20px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        nav a:hover {
+            color: var(--gold);
+        }
+
+        /* Contact Content */
+        .contact-container {
+            padding: 100px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: var(--gold);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: var(--white);
+            margin-bottom: 40px;
+        }
+
+        .info-box {
+            border: 1px solid var(--gold);
+            padding: 40px;
+            background-color: #111;
+        }
+
+        .map-link {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 40px;
+            background-color: var(--white);
+            color: var(--black);
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 4px;
+            transition: 0.3s;
+        }
+
+        .map-link:hover {
+            background-color: var(--gold);
+        }
+
+        footer {
+            margin-top: 100px;
+            padding: 40px;
+            border-top: 1px solid #222;
+            color: var(--gray);
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Raayesh Jewellers</div>
+        <div>
+            <a href="index.html">Home</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+    </nav>
+
+    <div class="contact-container">
+        <h1>Visit Our Boutique</h1>
+        <p>Experience the weight and shine of our silver in person. We believe jewellery is best chosen by hand.</p>
+        
+        <div class="info-box">
+            <h2 style="color: var(--gold); margin-top: 0;">Location</h2>
+            <p style="margin-bottom: 20px;">Raayesh Jewellers<br>Step inside to see our full collection.</p>
+            
+            <a href="https://maps.app.goo.gl/Tc1v8aeW1S8nGsRUA" class="map-link" target="_blank">📍 OPEN IN GOOGLE MAPS</a>
+        </div>
+    </div>
+
+    <footer>
+        © 2026 Raayesh Jewellers. All Rights Reserved.
+    </footer>
+
+</body>
+</html>
