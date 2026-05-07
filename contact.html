@@ -10,6 +10,7 @@
             --black: #0a0a0a;
             --white: #ffffff;
             --gray: #a0a0a0;
+            --drawer-bg: #111111;
         }
 
         body {
@@ -20,7 +21,6 @@
             text-align: center;
         }
 
-        /* Navigation */
         nav {
             display: flex;
             justify-content: space-between;
@@ -30,102 +30,64 @@
             background: var(--black);
         }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--gold);
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
+        .logo { font-size: 1.5rem; font-weight: bold; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; }
 
-        nav a {
-            color: var(--white);
-            text-decoration: none;
-            margin-left: 20px;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-        }
+        .menu-btn { cursor: pointer; display: flex; flex-direction: column; justify-content: space-between; width: 25px; height: 18px; z-index: 1100; }
+        .menu-btn span { display: block; height: 2px; width: 100%; background-color: var(--gold); }
 
-        nav a:hover {
-            color: var(--gold);
+        .drawer {
+            position: fixed; top: 0; right: -300px; width: 300px; height: 100%; background-color: var(--drawer-bg);
+            z-index: 1050; transition: 0.4s ease-in-out; display: flex; flex-direction: column; padding-top: 100px;
         }
+        .drawer.active { right: 0; }
+        .drawer a { color: var(--white); text-decoration: none; padding: 20px 40px; font-size: 1.2rem; text-transform: uppercase; border-bottom: 1px solid #222; }
+        .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); display: none; z-index: 1040; }
+        .overlay.active { display: block; }
 
-        /* Contact Content */
-        .contact-container {
-            padding: 100px 20px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
+        .contact-container { padding: 100px 20px; max-width: 800px; margin: 0 auto; }
+        h1 { color: var(--gold); font-size: 2.5rem; }
+        .info-box { border: 1px solid var(--gold); padding: 40px; background-color: #111; }
+        .map-link { display: inline-block; margin-top: 30px; padding: 15px 40px; background-color: var(--white); color: var(--black); text-decoration: none; font-weight: bold; text-transform: uppercase; border-radius: 4px; }
 
-        h1 {
-            color: var(--gold);
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        p {
-            font-size: 1.1rem;
-            color: var(--white);
-            margin-bottom: 40px;
-        }
-
-        .info-box {
-            border: 1px solid var(--gold);
-            padding: 40px;
-            background-color: #111;
-        }
-
-        .map-link {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 15px 40px;
-            background-color: var(--white);
-            color: var(--black);
-            text-decoration: none;
-            font-weight: bold;
-            text-transform: uppercase;
-            border-radius: 4px;
-            transition: 0.3s;
-        }
-
-        .map-link:hover {
-            background-color: var(--gold);
-        }
-
-        footer {
-            margin-top: 100px;
-            padding: 40px;
-            border-top: 1px solid #222;
-            color: var(--gray);
-            font-size: 0.8rem;
-        }
+        footer { margin-top: 100px; padding: 40px; border-top: 1px solid #222; color: var(--gray); font-size: 0.8rem; }
     </style>
 </head>
 <body>
 
     <nav>
         <div class="logo">Raayesh Jewellers</div>
-        <div>
-            <a href="index.html">Home</a>
-            <a href="contact.html">Contact Us</a>
+        <div class="menu-btn" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
     </nav>
 
+    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+    <div class="drawer" id="drawer">
+        <a href="index.html" onclick="toggleMenu()">Home</a>
+        <a href="contact.html" onclick="toggleMenu()">Contact Us</a>
+    </div>
+
     <div class="contact-container">
         <h1>Visit Us</h1>
-        <p>Experience the weight and shine of our silver in person. We believe jewellery is best chosen by hand.</p>
+        <p>Experience the weight and shine of our silver in person.</p>
         
         <div class="info-box">
             <h2 style="color: var(--gold); margin-top: 0;">Location</h2>
             <p style="margin-bottom: 20px;">Raayesh Jewellers<br>Jeweler's Lane, Car Street, Mangaluru, Karnataka 575001</p>
-            
             <a href="https://maps.app.goo.gl/Tc1v8aeW1S8nGsRUA" class="map-link" target="_blank">📍 OPEN IN GOOGLE MAPS</a>
         </div>
     </div>
 
-    <footer>
-        © 2026 Raayesh Jewellers. All Rights Reserved.
-    </footer>
+    <footer>© 2026 Raayesh Jewellers. All Rights Reserved.</footer>
 
+    <script>
+        function toggleMenu() {
+            document.getElementById('drawer').classList.toggle('active');
+            document.getElementById('overlay').classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
