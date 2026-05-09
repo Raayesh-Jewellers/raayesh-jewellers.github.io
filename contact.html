@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -35,12 +35,21 @@
             z-index: 1000;
         }
 
+        .logo-link {
+            text-decoration: none;
+        }
+
         .logo {
             font-size: 1.5rem;
             font-weight: bold;
             color: var(--gold);
             letter-spacing: 2px;
             text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        .logo-link:hover .logo {
+            color: var(--white);
         }
 
         /* Hamburger Icon */
@@ -162,7 +171,9 @@
 <body>
 
     <nav>
-        <div class="logo">Raayesh Jewellers</div>
+        <a href="index.html" class="logo-link">
+            <div class="logo">Raayesh Jewellers</div>
+        </a>
         <div class="menu-btn" onclick="toggleMenu()">
             <span></span>
             <span></span>
@@ -173,8 +184,8 @@
     <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
 
     <div class="drawer" id="drawer">
-        <a href="index.html">Home</a>
-        <a href="contact.html">Contact Us</a>
+        <a href="index.html" onclick="toggleMenu()">Home</a>
+        <a href="contact.html" onclick="toggleMenu()">Contact Us</a>
     </div>
 
     <div class="contact-container">
